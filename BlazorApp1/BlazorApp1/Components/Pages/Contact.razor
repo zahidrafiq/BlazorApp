@@ -1,0 +1,38 @@
+﻿@page "/contact"
+@using BlazorApp1.Components.Models;
+
+@foreach (var contact in contacts)
+{
+    <ContactComponent FirstName="@contact.FirstName" LastName="@contact.LastName" Email="@contact.Email"></ContactComponent>
+}
+
+@code {
+    List<ContactModel> contacts;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        contacts = new List<ContactModel>()
+        {
+            new ContactModel()
+            {
+                FirstName = "Ali",
+                LastName = "Raza",
+                Email = "ali@gmail.com"
+            },
+            new ContactModel()
+            {
+                FirstName = "Waqas",
+                LastName = "Ali",
+                Email = "waqas@gmail.com"
+            },
+            new ContactModel()
+            {
+                FirstName = "Sarfraz",
+                LastName = "Ahmad",
+                Email = "sarfraz@gmail.com"
+            },
+        };
+    }
+}
